@@ -1,6 +1,6 @@
 pipeline {
      agent { label 'workstation' }
-}
+
     stages {
         stage('VPC') {
            steps {
@@ -29,3 +29,4 @@ pipeline {
         }
     }
 }
+
