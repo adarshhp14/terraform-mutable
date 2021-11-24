@@ -12,6 +12,8 @@ pipeline {
             string(name: 'ACTION', defaultValue: 'apply', description: 'Give me an action to do on terraform')
         }
 
+//         triggers { pollSCM('H/2 * * * *') }
+
         options {
             ansiColor('xterm')
             options { disableConcurrentBuilds() }
