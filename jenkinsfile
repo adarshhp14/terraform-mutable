@@ -2,9 +2,14 @@ pipeline {
      agent { label 'workstation' }
 
      environment {
-        ACTION = "apply"
-        ENV = "dev"
+//         ACTION = "apply"
+//         ENV = "dev"
         SSH = credentials('CENTOS_SSH')
+        }
+
+        parameters {
+            choice(name: 'ENV', choices: ['dev', 'prod', 'three'], description: 'Chose Environment')
+            string(name: 'ACTION', defaultValue: 'apply', description: 'Give me an action to do on terraform')
         }
 
         options {
